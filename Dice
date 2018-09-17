@@ -7,10 +7,17 @@ import java.util.Scanner;
 
 public class Dice {
 	public static void main(String args[]){
-
-		RollDie(88);
-		
 		Scanner userinput = new Scanner(System.in);
+		
+		int userint;
+		
+		System.out.print("Choose a max value.");
+		
+		userint = userinput.nextInt();
+		
+		RollDie(userint);
+		
+		
 		
 	}
 	
@@ -18,17 +25,15 @@ public class Dice {
 		
 		int ComputerGen = new Random().nextInt(maxValue) +1;
 		
+		if (maxValue <= 0) {
+			System.out.print("Choose a positive number");
+			
+		}
+		
 		System.out.print("Your number is " + ComputerGen);
-		
-		
-		
+
 		return maxValue;
-		
-		
-		
-		
+
 	}
-	
-	
 
 }
